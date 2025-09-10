@@ -215,7 +215,7 @@ jobs:
 
       - name: Download RustDeskTempTopMostWindow artifacts
         uses: actions/download-artifact@master
-        if: ${{ inputs.upload-artifact }}
+        #if: ${{ inputs.upload-artifact }}
         with:
           name: topmostwindow-artifacts
           path: "./rustdesk"
