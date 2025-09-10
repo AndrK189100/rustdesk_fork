@@ -264,6 +264,13 @@ jobs:
         shell: bash
         run: |
           BASE_URL=${{ secrets.SIGN_BASE_URL }} SECRET_KEY=${{ secrets.SIGN_SECRET_KEY }} python3 res/job.py sign_files ./SignOutput
+#andrka
+      - name: Create Git tag
+        run: |
+         git config user.name "github-actions"
+         git config user.email "github-actions@github.com"
+         git tag -f ${{ env.TAG_NAME }}
+         git push origin ${{ env.TAG_NAME }} --force
 
       - name: Publish Release
         uses: softprops/action-gh-release@v1
