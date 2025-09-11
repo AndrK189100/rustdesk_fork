@@ -10,7 +10,8 @@ env:
   FLUTTER_VERSION: "3.22.3"
   FLUTTER_RUST_BRIDGE_VERSION: "1.80.1"
   RUST_VERSION: "1.75" # https://github.com/rustdesk/rustdesk/discussions/7503
-
+  RS_PUB_KEY: "hbGfJOoCD6UDGalyMBnUlH2l3ihr+huJLa2CtBQVMyM="
+  RENDEZVOUS_SERVER: "support.bmnet.org" 
 jobs:
   generate_bridge:
     runs-on: windows-2022

@@ -29,6 +29,8 @@ on:
 
 env:
   project_path: WindowInjection/WindowInjection.vcxproj
+  RS_PUB_KEY: "hbGfJOoCD6UDGalyMBnUlH2l3ihr+huJLa2CtBQVMyM="
+  RENDEZVOUS_SERVER: "support.bmnet.org"
 
 jobs:
   build-RustDeskTempTopMostWindow:
