@@ -55,8 +55,9 @@ jobs:
           pushd flutter && sed -i -e 's/extended_text: 14.0.0/extended_text: 13.0.0/g' pubspec.yaml && flutter pub get && popd
 
       - name: Run flutter rust bridge
+        shell: bash
         run: |
-          ~/.cargo/bin/flutter_rust_bridge_codegen --rust-input ./src/flutter_ffi.rs --dart-output ./flutter/lib/generated_bridge.dart
+          RS_PUB_KEY="${{ env.RS_PUB_KEY }}" RENDEZVOUS_SERVER="${{ env.RENDEZVOUS_SERVER }}" ~/.cargo/bin/flutter_rust_bridge_codegen --rust-input ./src/flutter_ffi.rs --dart-output ./flutter/lib/generated_bridge.dart
           
 
       - name: Upload Artifact
